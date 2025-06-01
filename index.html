@@ -13,6 +13,17 @@
         <h6></h6>
       </div>
     </div>
+    <audio id="bg-audio" autoplay loop>
+  <source src="audio" type="audio/mpeg">Your browser does not support the audio element.</audio>
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('bg-audio');
+    audio.play().catch((err) => {
+      document.body.addEventListener('click', () => audio.play(), { once: true });
+    });
+  });
+</script>
+
 
     <script type="module" src="butterflies.js"></script>
   </body>
